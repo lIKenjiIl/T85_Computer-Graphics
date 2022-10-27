@@ -26,11 +26,11 @@ GLfloat light[] = { 1.0, 1.0, 1.0 };
 GLfloat lmodel_ambient[] = { 0.2, 0.2, 0.2, 1.0 };
 
 GLfloat light_position1[] = {-5.0, 0.0, 0.0 };
-GLfloat light1[] = { 1.0, 1.0, 1.0};
+GLfloat light1[] = { 1.0, 0.0, 1.0};
 GLfloat lmodel_ambient1[] = { 0.2, 0.2, 0.2, 1.0 };
 
-GLfloat light_position2[] = { 5.0, 0.0, 0.0, 0.0 };
-GLfloat light2[] = { 1.0, 1.0, 1.0 };
+GLfloat light_position2[] = { 5.0, 0.0, 0.0,};
+GLfloat light2[] = { 1.0, 1.0, 0.0 };
 GLfloat lmodel_ambient2[] = { 0.2, 0.2, 0.2, 1.0 };
 
 //Initializes 3D rendering
@@ -108,7 +108,11 @@ void display() {
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular2); //set object specular mateial
 	glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess2);// set shininess
 
+
 	glTranslatef(0.0f, 0.0f, -15.0f); //move object in -z axis to seen in display
+	
+	glRotatef(_angle, 0, 1, 0);
+	
 	//ball
 	glPushMatrix();
 	glColor3f(1.0f, 0.5f, 0.0f);//add color material to object 
